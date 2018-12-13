@@ -36,15 +36,20 @@ class ViewController: UIViewController {
         breedPickerView.isHidden = true
         breedPickerView.delegate = self
         breedPickerView.dataSource = self
+        
         breedButton.titleLabel?.adjustsFontSizeToFitWidth = true
         breedButton.contentHorizontalAlignment = .left
         breedButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        
         dogImageView.layer.cornerRadius = 5
         dogImageView.clipsToBounds = true
+        
         currentBreedView.layer.cornerRadius = 5
         currentBreedView.clipsToBounds = true
+        
         fetchDogButton.layer.cornerRadius = 10
         fetchDogButton.clipsToBounds = true
+        fetchDogButton.isEnabled = false
     }
     
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
@@ -75,7 +80,6 @@ class ViewController: UIViewController {
         } else {
             url = URL(string: "https://dog.ceo/api/breeds/image/random")!
         }
-        print(url)
         getData(from: url) { (optionalData, optionalResponse, optionalError) in
             if let dict = self.dataToDictionary(data: optionalData) {
                 let dogImageURL = URL(string: dict["message"]! as! String)!
