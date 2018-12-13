@@ -32,7 +32,6 @@ class ViewController: UIViewController, BreedsTableViewDelegate {
     }
     
     func setupUI() {
-        
         breedButton.titleLabel?.adjustsFontSizeToFitWidth = true
         breedButton.contentHorizontalAlignment = .left
         breedButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)

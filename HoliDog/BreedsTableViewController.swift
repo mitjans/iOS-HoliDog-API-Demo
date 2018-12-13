@@ -35,6 +35,7 @@ class BreedsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.separatorColor = UIColor.black
         fetchBreeds()
     }
     
