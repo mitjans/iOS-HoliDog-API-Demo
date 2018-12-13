@@ -13,6 +13,8 @@
 		A42A611821C2B74B00CACB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42A611621C2B74B00CACB78 /* Main.storyboard */; };
 		A42A611A21C2B74C00CACB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42A611921C2B74C00CACB78 /* Assets.xcassets */; };
 		A42A611D21C2B74C00CACB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42A611B21C2B74C00CACB78 /* LaunchScreen.storyboard */; };
+		A45FCAEB21C2F02F009C9B12 /* BreedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45FCAEA21C2F02F009C9B12 /* BreedsTableViewController.swift */; };
+		A45FCAED21C2F03A009C9B12 /* HoliDogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45FCAEC21C2F03A009C9B12 /* HoliDogAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		A42A611921C2B74C00CACB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A42A611C21C2B74C00CACB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A42A611E21C2B74C00CACB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A45FCAEA21C2F02F009C9B12 /* BreedsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsTableViewController.swift; sourceTree = "<group>"; };
+		A45FCAEC21C2F03A009C9B12 /* HoliDogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoliDogAPI.swift; sourceTree = "<group>"; };
 		C2883B0DD759C9361A1D23CE /* Pods_HoliDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoliDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -73,6 +77,8 @@
 				A42A611221C2B74B00CACB78 /* AppDelegate.swift */,
 				A42A611421C2B74B00CACB78 /* ViewController.swift */,
 				A42A611621C2B74B00CACB78 /* Main.storyboard */,
+				A45FCAEA21C2F02F009C9B12 /* BreedsTableViewController.swift */,
+				A45FCAEC21C2F03A009C9B12 /* HoliDogAPI.swift */,
 				A42A611921C2B74C00CACB78 /* Assets.xcassets */,
 				A42A611B21C2B74C00CACB78 /* LaunchScreen.storyboard */,
 				A42A611E21C2B74C00CACB78 /* Info.plist */,
@@ -208,8 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A45FCAEB21C2F02F009C9B12 /* BreedsTableViewController.swift in Sources */,
 				A42A611521C2B74B00CACB78 /* ViewController.swift in Sources */,
 				A42A611321C2B74B00CACB78 /* AppDelegate.swift in Sources */,
+				A45FCAED21C2F03A009C9B12 /* HoliDogAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

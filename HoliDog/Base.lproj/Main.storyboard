@@ -22,10 +22,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background_image" translatesAutoresizingMaskIntoConstraints="NO" id="rm1-aW-gEv">
-                                <rect key="frame" x="0.0" y="20" width="375" height="198"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNo-iz-zw0">
                                 <rect key="frame" x="126" y="586" width="123" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -39,24 +35,24 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIj-0X-Xf3">
-                                <rect key="frame" x="32" y="216" width="310" height="21"/>
+                                <rect key="frame" x="32" y="226" width="310" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Breed:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-Xh-7tU">
-                                        <rect key="frame" x="0.0" y="0.0" width="155" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsC-vH-d1T">
-                                        <rect key="frame" x="155" y="0.0" width="155" height="21"/>
+                                        <rect key="frame" x="155" y="0.0" width="155" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                         <color key="tintColor" red="0.91693839726399207" green="1" blue="0.85261474138850069" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Random ▾"/>
                                         <connections>
-                                            <action selector="breedPickerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ufM-k8-Pas"/>
+                                            <segue destination="Gvx-1e-nTP" kind="show" identifier="showBreedsSegue" id="CYv-DI-nSc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -66,19 +62,16 @@
                                 <rect key="frame" x="32" y="260" width="310" height="310"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-v6-qJ0">
-                                <rect key="frame" x="0.0" y="667" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.2336345655" green="0.25479854060000001" blue="0.21724499180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </pickerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background_image" translatesAutoresizingMaskIntoConstraints="NO" id="rm1-aW-gEv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="198"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="breedButton" destination="gsC-vH-d1T" id="b2x-de-7kO"/>
-                        <outlet property="breedPickerView" destination="i0i-v6-qJ0" id="2vg-u7-qtU"/>
                         <outlet property="currentBreedView" destination="oIj-0X-Xf3" id="JcU-4W-qrN"/>
                         <outlet property="dogImageView" destination="TKR-yH-SEx" id="vi1-OD-oFZ"/>
                         <outlet property="fetchDogButton" destination="pNo-iz-zw0" id="sv9-pu-fUO"/>
@@ -87,6 +80,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--Breeds Table View Controller-->
+        <scene sceneID="bjT-Ab-A0M">
+            <objects>
+                <tableViewController id="IPO-t3-7Jk" customClass="BreedsTableViewController" customModule="HoliDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f0B-7u-Xt1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.57329463650000001" green="0.7582883883" blue="0.5654285644" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Search Breed" id="sVv-VU-J62">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="IPO-t3-7Jk" id="fRj-a8-W3T"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="breedCell" id="D18-RC-hsi">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D18-RC-hsi" id="6TC-2J-cqz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="IPO-t3-7Jk" id="SY2-s6-OP9"/>
+                            <outlet property="delegate" destination="IPO-t3-7Jk" id="H97-yn-kUx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ANd-ts-nNL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dX2-ca-35Y">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="IPO-t3-7Jk" id="zd1-dp-0Xo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="sVv-VU-J62" id="PYI-nj-3YB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iGk-sr-GPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1895.2" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sPS-i4-svH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gvx-1e-nTP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P33-VD-v6P">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IPO-t3-7Jk" kind="relationship" relationship="rootViewController" id="8aM-1X-G2z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vag-dt-Cdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="132.68365817091455"/>
         </scene>
     </scenes>
     <resources>
