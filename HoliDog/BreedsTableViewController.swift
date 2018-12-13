@@ -58,17 +58,20 @@ class BreedsTableViewController: UITableViewController {
         
         if indexPath.row == 0 && currentBreed == nil {
             cell.accessoryType = .checkmark
+            cell.backgroundColor = UIColor(red: 160/255, green: 213/255, blue: 157/255, alpha: 1)
         } else if searchBreeds.indices.contains(indexPath.row - 1) && searchBreeds[indexPath.row - 1].lowercased() == currentBreed {
             cell.accessoryType = .checkmark
+            cell.backgroundColor = UIColor(red: 160/255, green: 213/255, blue: 157/255, alpha: 1)
         } else {
             cell.accessoryType = .none
+            cell.backgroundColor = UIColor(red: 221/255, green: 240/255, blue: 222/255, alpha: 1)
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        searchBar.resignFirstResponder()
         delegate?.currentBreed = indexPath.row == 0 ? nil : searchBreeds[indexPath.row - 1]
+        searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }
     
@@ -95,6 +98,7 @@ extension BreedsTableViewController: UISearchBarDelegate {
     }
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.text = ""
         searchBar.setShowsCancelButton(false, animated: true)
         searchBreeds = breeds
         return true
@@ -106,16 +110,16 @@ extension BreedsTableViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        var searchBreeds: [String] = []
+        var temp: [String] = []
         if let text = searchBar.text, text.count != 0 {
             for breed in breeds {
                 if breed.contains(text.lowercased()) {
-                    searchBreeds.append(breed)
+                    temp.append(breed)
                 }
             }
         } else {
-            searchBreeds = breeds
+            temp = breeds
         }
-        self.searchBreeds = searchBreeds
+        self.searchBreeds = temp
     }
 }

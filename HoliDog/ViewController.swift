@@ -36,6 +36,7 @@ class ViewController: UIViewController, BreedsTableViewDelegate {
         breedButton.titleLabel?.adjustsFontSizeToFitWidth = true
         breedButton.contentHorizontalAlignment = .left
         breedButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        breedButton.isEnabled = false
         
         dogImageView.layer.cornerRadius = 5
         dogImageView.clipsToBounds = true
@@ -50,6 +51,7 @@ class ViewController: UIViewController, BreedsTableViewDelegate {
     
     @IBAction func fetchDogButtonPressed(_ sender: UIButton) {
         sender.isEnabled = false
+        breedButton.isEnabled = false
         fetchNewDog()
     }
     
@@ -63,6 +65,7 @@ class ViewController: UIViewController, BreedsTableViewDelegate {
             DispatchQueue.main.async {
                 self.dogImageView.image = optionalImage
                 self.fetchDogButton.isEnabled = true
+                self.breedButton.isEnabled = true
             }
             SVProgressHUD.dismiss()
         }
