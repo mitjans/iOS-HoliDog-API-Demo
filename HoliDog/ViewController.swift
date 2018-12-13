@@ -19,6 +19,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var breedPickerView: UIPickerView!
     
     var breeds: [String] = []
+    var currentBreed: String? = nil {
+        didSet {
+            self.breedButton.setTitle(currentBreed!.capitalized + " ▾", for: .normal)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,8 @@ class ViewController: UIViewController {
     func setupUI() {
         breedPickerView.isHidden = true
         breedPickerView.delegate = self
+        breedPickerView.dataSource = self
+        breedButton.titleLabel?.adjustsFontSizeToFitWidth = true
         breedButton.contentHorizontalAlignment = .left
         breedButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         dogImageView.layer.cornerRadius = 5
@@ -62,7 +69,14 @@ class ViewController: UIViewController {
     
     func fetchNewDog() {
         SVProgressHUD.show()
-        getData(from: URL(string: "https://dog.ceo/api/breeds/image/random")!) { (optionalData, optionalResponse, optionalError) in
+        var url: URL
+        if let breed = currentBreed {
+            url = URL(string: "https://dog.ceo/api/breed/\(breed.split(separator: " ").reversed().joined(separator: "/"))/images/random")!
+        } else {
+            url = URL(string: "https://dog.ceo/api/breeds/image/random")!
+        }
+        print(url)
+        getData(from: url) { (optionalData, optionalResponse, optionalError) in
             if let dict = self.dataToDictionary(data: optionalData) {
                 let dogImageURL = URL(string: dict["message"]! as! String)!
                 self.downloadImage(from: dogImageURL)
@@ -76,10 +90,10 @@ class ViewController: UIViewController {
             if let dict = self.dataToDictionary(data: optionalData), let breedDict = dict["message"]! as? [String: [String]] {
                 for (breed, subBreed) in breedDict {
                     if subBreed.isEmpty {
-                        self.breeds.append(breed.capitalizingFirstLetter())
+                        self.breeds.append(breed)
                     } else {
                         for sub in subBreed {
-                            self.breeds.append("\(sub.capitalizingFirstLetter()) \(breed.capitalizingFirstLetter())")
+                            self.breeds.append("\(sub) \(breed)")
                         }
                     }
                 }
@@ -113,10 +127,20 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let name = breeds[row]
+        let name = breeds[row].capitalized
         return NSAttributedString(string: name, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currentBreed = breeds[row]
+        pickerView.resignFirstResponder()
+        UIView.animate(withDuration: 0.2) {
+            pickerView.frame = CGRect(x: 0, y: self.view.frame.height, width: pickerView.frame.width, height: pickerView.frame.height)
+        }
+        pickerView.isHidden = true
+        pickerView.resignFirstResponder()
+        fetchNewDog()
+    }
     
     @IBAction func breedPickerButtonPressed(_ sender: UIButton) {
         breedPickerView.isHidden = false
