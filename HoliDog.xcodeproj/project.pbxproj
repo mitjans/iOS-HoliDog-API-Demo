@@ -13,6 +13,7 @@
 		A42A611821C2B74B00CACB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42A611621C2B74B00CACB78 /* Main.storyboard */; };
 		A42A611A21C2B74C00CACB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42A611921C2B74C00CACB78 /* Assets.xcassets */; };
 		A42A611D21C2B74C00CACB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42A611B21C2B74C00CACB78 /* LaunchScreen.storyboard */; };
+		A45FCAE921C2D772009C9B12 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45FCAE821C2D772009C9B12 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A42A611921C2B74C00CACB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A42A611C21C2B74C00CACB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A42A611E21C2B74C00CACB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A45FCAE821C2D772009C9B12 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C2883B0DD759C9361A1D23CE /* Pods_HoliDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoliDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -46,7 +48,6 @@
 				4D3978CFFD71289B8D75AA38 /* Pods-HoliDog.debug.xcconfig */,
 				5130434F8E390FA2414A32F9 /* Pods-HoliDog.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,6 +74,7 @@
 			children = (
 				A42A611221C2B74B00CACB78 /* AppDelegate.swift */,
 				A42A611421C2B74B00CACB78 /* ViewController.swift */,
+				A45FCAE821C2D772009C9B12 /* StringExtension.swift */,
 				A42A611621C2B74B00CACB78 /* Main.storyboard */,
 				A42A611921C2B74C00CACB78 /* Assets.xcassets */,
 				A42A611B21C2B74C00CACB78 /* LaunchScreen.storyboard */,
@@ -211,6 +213,7 @@
 			files = (
 				A42A611521C2B74B00CACB78 /* ViewController.swift in Sources */,
 				A42A611321C2B74B00CACB78 /* AppDelegate.swift in Sources */,
+				A45FCAE921C2D772009C9B12 /* StringExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
