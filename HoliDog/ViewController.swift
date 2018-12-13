@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -45,6 +46,7 @@ class ViewController: UIViewController {
     }
     
     func fetchNewDog() {
+        SVProgressHUD.show()
         getData(from: URL(string: "https://dog.ceo/api/breeds/image/random")!) { (optionalData, optionalResponse, optionalError) in
             if let dict = self.dataToDictionary(data: optionalData) {
                 let dogImageURL = URL(string: dict["message"]!)!
@@ -56,9 +58,9 @@ class ViewController: UIViewController {
     func downloadImage(from url: URL) {
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
             DispatchQueue.main.async() {
                 self.dogImageView.image = UIImage(data: data)
+                SVProgressHUD.dismiss()
                 self.fetchDogButton.isEnabled = true
             }
         }

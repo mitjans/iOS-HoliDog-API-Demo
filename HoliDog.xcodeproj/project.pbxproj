@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BFAEF3C3F4AADC5808F7034 /* Pods_HoliDog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2883B0DD759C9361A1D23CE /* Pods_HoliDog.framework */; };
 		A42A611321C2B74B00CACB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42A611221C2B74B00CACB78 /* AppDelegate.swift */; };
 		A42A611521C2B74B00CACB78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42A611421C2B74B00CACB78 /* ViewController.swift */; };
 		A42A611821C2B74B00CACB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42A611621C2B74B00CACB78 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D3978CFFD71289B8D75AA38 /* Pods-HoliDog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoliDog.debug.xcconfig"; path = "Target Support Files/Pods-HoliDog/Pods-HoliDog.debug.xcconfig"; sourceTree = "<group>"; };
+		5130434F8E390FA2414A32F9 /* Pods-HoliDog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoliDog.release.xcconfig"; path = "Target Support Files/Pods-HoliDog/Pods-HoliDog.release.xcconfig"; sourceTree = "<group>"; };
 		A42A610F21C2B74B00CACB78 /* HoliDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoliDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42A611221C2B74B00CACB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42A611421C2B74B00CACB78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		A42A611921C2B74C00CACB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A42A611C21C2B74C00CACB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A42A611E21C2B74C00CACB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2883B0DD759C9361A1D23CE /* Pods_HoliDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoliDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFAEF3C3F4AADC5808F7034 /* Pods_HoliDog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01E3B66907DB5D7ACE184F8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D3978CFFD71289B8D75AA38 /* Pods-HoliDog.debug.xcconfig */,
+				5130434F8E390FA2414A32F9 /* Pods-HoliDog.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A42A610621C2B74B00CACB78 = {
 			isa = PBXGroup;
 			children = (
 				A42A611121C2B74B00CACB78 /* HoliDog */,
 				A42A611021C2B74B00CACB78 /* Products */,
+				01E3B66907DB5D7ACE184F8A /* Pods */,
+				E833CC52C0881730FF91F461 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +81,14 @@
 			path = HoliDog;
 			sourceTree = "<group>";
 		};
+		E833CC52C0881730FF91F461 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2883B0DD759C9361A1D23CE /* Pods_HoliDog.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A42A612121C2B74C00CACB78 /* Build configuration list for PBXNativeTarget "HoliDog" */;
 			buildPhases = (
+				89E45B562617CF99B88D12B2 /* [CP] Check Pods Manifest.lock */,
 				A42A610B21C2B74B00CACB78 /* Sources */,
 				A42A610C21C2B74B00CACB78 /* Frameworks */,
 				A42A610D21C2B74B00CACB78 /* Resources */,
+				3D5BE8E7B3874165EC96B00F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D5BE8E7B3874165EC96B00F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoliDog/Pods-HoliDog-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HoliDog/Pods-HoliDog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89E45B562617CF99B88D12B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HoliDog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A42A610B21C2B74B00CACB78 /* Sources */ = {
@@ -280,6 +354,7 @@
 		};
 		A42A612221C2B74C00CACB78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D3978CFFD71289B8D75AA38 /* Pods-HoliDog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +374,7 @@
 		};
 		A42A612321C2B74C00CACB78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5130434F8E390FA2414A32F9 /* Pods-HoliDog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
