@@ -1,3 +1,6 @@
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/hasp0t/hasp0t1-u-kk-u-)
+
+
 # iOS-HoliDog-API-Demo
 This a demo app for the HoliDog API challenge.
 
